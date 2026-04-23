@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Copper Beacon"
+  description="This page doesn't exist. Try the home page or contact us."
+>
+  <section class="bg-cream min-h-[70vh] flex items-center py-20">
+    <div class="container">
+      <div class="max-w-xl">
+        <p class="font-sans text-copper font-medium text-sm tracking-wider uppercase mb-4">404</p>
+        <h1 class="font-serif font-medium text-navy mb-4" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em;">
+          Hmm. That page isn't here.
+        </h1>
+        <p class="font-sans text-charcoal/80 leading-relaxed mb-8">
+          Looks like this page moved, was renamed, or never existed. Try the <a href="/" class="text-copper hover:text-copper-dark underline underline-offset-2 transition-colors">home page</a> or <a href="/contact" class="text-copper hover:text-copper-dark underline underline-offset-2 transition-colors">send us a message</a> if you were looking for something specific.
+        </p>
+        <a href="/" class="btn-primary">
+          Go home
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

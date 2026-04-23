@@ -1,0 +1,19 @@
+---
+interface Props {
+  industry?: string;
+}
+
+const { industry = 'local business' } = Astro.props;
+---
+
+<div class="card border-dashed border-2 border-border/60 bg-cream text-center py-10">
+  <div class="w-12 h-12 rounded-full bg-border/40 mx-auto mb-4 flex items-center justify-center" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 10m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" stroke="#B87333" stroke-width="1.5"/>
+      <path d="M3 17.5C3 15 6 13 10 13s7 2 7 4.5" stroke="#B87333" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <p class="font-sans text-sm text-charcoal/50 italic">
+    Testimonial from a {industry} client — coming soon.
+  </p>
+</div>

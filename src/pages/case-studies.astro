@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('case-studies', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout
+  title="Case Studies | Real Results for Local Businesses | Copper Beacon"
+  description="Detailed case studies showing exactly what Copper Beacon did for local businesses and what it produced."
+>
+  <!-- Hero -->
+  <section class="bg-cream py-20" aria-labelledby="cs-hero-heading">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h1
+          id="cs-hero-heading"
+          class="font-serif font-medium text-navy mb-6"
+          style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;"
+        >
+          Real businesses. Real results.
+        </h1>
+        <p class="font-sans text-charcoal" style="font-size: 1.125rem; line-height: 1.65;">
+          Detailed case studies showing exactly what we did and what it produced.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studies or empty state -->
+  <section class="bg-warm-white py-16 border-t border-border">
+    <div class="container">
+      {studies.length === 0 ? (
+        <div class="max-w-prose">
+          <div class="card py-12 text-center">
+            <div class="w-12 h-12 rounded-full bg-copper/10 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 2l2.5 5 5.5.8-4 3.9.9 5.5L11 14.5 6.1 17.2l.9-5.5L3 7.8 8.5 7z" stroke="#B87333" stroke-width="1.75" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2 class="font-serif font-medium text-navy mb-3" style="font-size: 1.25rem;">Case studies coming soon.</h2>
+            <p class="font-sans text-charcoal/70 text-sm leading-relaxed max-w-sm mx-auto">
+              We're documenting our current client work — with permission — and will publish full case studies showing the strategy, execution, and measurable results. Want to be one of our early clients with a full case study? <a href="/contact" class="text-copper hover:text-copper-dark underline underline-offset-2 transition-colors">Let's talk.</a>
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {studies.map((study) => (
+            <article class="card group">
+              <span class="pill text-xs mb-3 inline-block">{study.data.industry}</span>
+              <h2 class="font-serif font-medium text-navy mb-2 group-hover:text-copper transition-colors" style="font-size: 1.25rem; line-height: 1.3;">
+                <a href={`/case-studies/${study.slug}`} class="after:absolute after:inset-0">
+                  {study.data.title}
+                </a>
+              </h2>
+              <p class="font-sans text-sm text-charcoal/70 leading-relaxed mb-4">
+                {study.data.description}
+              </p>
+              {study.data.results.length > 0 && (
+                <ul class="flex flex-col gap-1.5">
+                  {study.data.results.slice(0, 3).map((result) => (
+                    <li class="flex items-center gap-2 font-sans text-xs text-charcoal/70">
+                      <svg class="text-success flex-shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2.5 7l3 3L11.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      {result}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

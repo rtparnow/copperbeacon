@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const servicesSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Local Search Optimization',
+    provider: { '@type': 'Organization', name: 'Copper Beacon' },
+    description: 'Local SEO to rank your business in the Google Map Pack and organic search results.',
+    areaServed: { '@type': 'State', name: 'Iowa' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Google Business Profile Management',
+    provider: { '@type': 'Organization', name: 'Copper Beacon' },
+    description: 'Full management of your Google Business Profile to generate calls, direction requests, and website visits.',
+    areaServed: { '@type': 'State', name: 'Iowa' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Review Generation & Reputation Management',
+    provider: { '@type': 'Organization', name: 'Copper Beacon' },
+    description: 'Automated review request flows, response management, and reputation monitoring to build your 5-star rating.',
+    areaServed: { '@type': 'State', name: 'Iowa' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI Search Visibility',
+    provider: { '@type': 'Organization', name: 'Copper Beacon' },
+    description: 'Optimization for AI assistant recommendations in ChatGPT, Claude, Gemini, Perplexity, and Bing Copilot.',
+    areaServed: { '@type': 'State', name: 'Iowa' },
+  },
+];
+---
+
+<BaseLayout
+  title="Services | Local SEO, Google Business Profile, Reviews & AI Search | Copper Beacon"
+  description="Local search optimization, Google Business Profile management, review generation, and AI search visibility for ChatGPT, Claude, Gemini, and Perplexity. For small local businesses."
+  schema={servicesSchema}
+>
+  <!-- Hero -->
+  <section class="bg-cream py-20" aria-labelledby="services-hero-heading">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1
+          id="services-hero-heading"
+          class="font-serif font-medium text-navy mb-6"
+          style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;"
+        >
+          What Copper Beacon actually does for your business.
+        </h1>
+        <p class="font-sans text-charcoal" style="font-size: 1.125rem; line-height: 1.65;">
+          The technical work behind getting found, chosen, and hired by more local customers — on Google, in AI search, and everywhere else.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 1: Local SEO -->
+  <section class="bg-warm-white py-20 border-t border-border" id="local-seo" aria-labelledby="local-seo-heading">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="font-sans text-xs font-medium text-copper uppercase tracking-wider mb-3 block">Service 01</span>
+          <h2 id="local-seo-heading" class="section-heading mb-6">Local search optimization</h2>
+          <p class="font-sans text-charcoal leading-relaxed mb-6">
+            Your business ranking in Google's local results — the Map Pack, organic results, and "near me" searches. For most local service businesses, local SEO is the single highest-ROI marketing channel.
+          </p>
+          <p class="font-sans text-charcoal/70 text-sm leading-relaxed border-l-2 border-copper pl-4 italic">
+            When someone searches for a service near them, the businesses that show up in the top three Map Pack results get roughly 44% of all clicks. Local SEO is the difference between a phone that rings and a phone that doesn't.
+          </p>
+        </div>
+        <div class="bg-cream rounded-card p-8 border border-border">
+          <h3 class="font-serif font-medium text-navy mb-4" style="font-size: 1.125rem;">What's included</h3>
+          <ul class="flex flex-col gap-3" role="list">
+            {[
+              'Local keyword research and content strategy',
+              'On-page SEO (titles, metadata, structured data, site speed)',
+              'Technical SEO audit and fixes',
+              'Local citations and directory presence',
+              'Competitive analysis and gap closure',
+              'Monthly ranking and traffic reporting',
+            ].map((item) => (
+              <li class="flex items-start gap-3 font-sans text-sm text-charcoal/80">
+                <svg class="flex-shrink-0 mt-0.5 text-success" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: GBP -->
+  <section class="bg-cream py-20 border-t border-border" id="google-business-profile" aria-labelledby="gbp-heading">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="order-2 lg:order-1 bg-warm-white rounded-card p-8 border border-border">
+          <h3 class="font-serif font-medium text-navy mb-4" style="font-size: 1.125rem;">What's included</h3>
+          <ul class="flex flex-col gap-3" role="list">
+            {[
+              'Full profile optimization (categories, services, attributes, hours, description)',
+              'Weekly Google Posts',
+              'Photo management and regular updates',
+              'Q&A monitoring and response',
+              'Service area and business info maintenance',
+              'Google Business Profile insights reporting',
+            ].map((item) => (
+              <li class="flex items-start gap-3 font-sans text-sm text-charcoal/80">
+                <svg class="flex-shrink-0 mt-0.5 text-success" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="order-1 lg:order-2">
+          <span class="font-sans text-xs font-medium text-copper uppercase tracking-wider mb-3 block">Service 02</span>
+          <h2 id="gbp-heading" class="section-heading mb-6">Google Business Profile management</h2>
+          <p class="font-sans text-charcoal leading-relaxed mb-6">
+            Your Google Business Profile is often the single most important piece of your online presence. A properly optimized, actively managed profile produces calls, direction requests, and website visits directly from Google Search and Maps.
+          </p>
+          <p class="font-sans text-charcoal/70 text-sm leading-relaxed border-l-2 border-copper pl-4 italic">
+            Businesses with active, optimized Google Business Profiles generate 2–5x more calls than those with neglected profiles. Most small businesses set their profile up once and never touch it again. That's a leak, and we plug it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Reviews -->
+  <section class="bg-warm-white py-20 border-t border-border" id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="font-sans text-xs font-medium text-copper uppercase tracking-wider mb-3 block">Service 03</span>
+          <h2 id="reviews-heading" class="section-heading mb-6">Review generation & reputation management</h2>
+          <p class="font-sans text-charcoal leading-relaxed mb-6">
+            Reviews are the #1 trust signal for local customers — and they heavily influence how Google, Bing, and AI assistants rank and recommend your business. We build automated systems that ethically request reviews from happy customers and keep your rating climbing.
+          </p>
+          <p class="font-sans text-charcoal/70 text-sm leading-relaxed border-l-2 border-copper pl-4 italic">
+            Going from 25 reviews at a 4.3 average to 80 reviews at a 4.7 average can double your conversion rate from searchers to customers. Reviews compound. The earlier you start systematizing them, the faster you pull ahead of competitors.
+          </p>
+        </div>
+        <div class="bg-cream rounded-card p-8 border border-border">
+          <h3 class="font-serif font-medium text-navy mb-4" style="font-size: 1.125rem;">What's included</h3>
+          <ul class="flex flex-col gap-3" role="list">
+            {[
+              'Automated review request flows (text and email)',
+              'Integration with your CRM, booking system, or point-of-sale',
+              'Review response management (all platforms)',
+              'Negative review mitigation strategy',
+              'Reputation monitoring across Google, Yelp, Facebook, industry-specific sites',
+              'Monthly reputation dashboard',
+            ].map((item) => (
+              <li class="flex items-start gap-3 font-sans text-sm text-charcoal/80">
+                <svg class="flex-shrink-0 mt-0.5 text-success" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 4: AI Search -->
+  <section class="bg-cream py-20 border-t border-border" id="ai-search" aria-labelledby="ai-heading">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="order-2 lg:order-1 bg-warm-white rounded-card p-8 border border-border">
+          <h3 class="font-serif font-medium text-navy mb-4" style="font-size: 1.125rem;">What's included</h3>
+          <ul class="flex flex-col gap-3" role="list">
+            {[
+              'Visibility audits across ChatGPT, Claude, Gemini, Perplexity, and Bing Copilot',
+              'Content optimized for AI assistant citation',
+              'Structured data and schema markup tuned for LLM understanding',
+              'Authoritative content development (the kind AI assistants cite)',
+              'Monthly AI visibility reporting',
+              'Competitive tracking of who\'s being recommended in your market',
+            ].map((item) => (
+              <li class="flex items-start gap-3 font-sans text-sm text-charcoal/80">
+                <svg class="flex-shrink-0 mt-0.5 text-success" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="order-1 lg:order-2">
+          <span class="font-sans text-xs font-medium text-copper uppercase tracking-wider mb-3 block">Service 04</span>
+          <h2 id="ai-heading" class="section-heading mb-6">AI search visibility (GEO)</h2>
+          <p class="font-sans text-charcoal leading-relaxed mb-6">
+            When customers ask ChatGPT "who's the best orthodontist in Iowa City?" or ask Gemini "I need a plumber near me" — AI assistants give direct recommendations. Most local businesses have no idea whether they're being recommended or not. We track it, optimize for it, and make sure you show up in AI answers.
+          </p>
+          <p class="font-sans text-charcoal/70 text-sm leading-relaxed border-l-2 border-copper pl-4 italic">
+            AI-mediated search is growing fast. Within 18–24 months, a significant portion of "find me a local service" queries will happen inside AI assistants rather than traditional search engines. The businesses that optimize for this shift now will dominate. The ones that wait will spend years trying to catch up.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

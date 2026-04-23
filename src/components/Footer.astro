@@ -1,0 +1,107 @@
+---
+const currentYear = new Date().getFullYear();
+
+const navLinks = [
+  { href: '/services', label: 'Services' },
+  { href: '/industries', label: 'Industries' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const legalLinks = [
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms of Service' },
+];
+---
+
+<footer class="bg-navy text-cream/80">
+  <div class="container py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Brand column -->
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-4" aria-label="Copper Beacon — home">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="14" cy="14" r="14" fill="#B87333"/>
+            <path d="M8 14C8 10.686 10.686 8 14 8C15.657 8 17.157 8.672 18.243 9.757" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="14" cy="14" r="3" fill="#FAF7F2"/>
+            <path d="M14 7V5M14 23V21M7 14H5M23 14H21" stroke="#FAF7F2" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="font-serif font-medium text-cream text-lg">Copper Beacon</span>
+        </a>
+        <p class="font-sans text-sm leading-relaxed text-cream/70 max-w-xs">
+          You run the business. We bring the customers.
+        </p>
+        <p class="font-sans text-sm text-cream/70 mt-4">
+          <a href="mailto:hello@copperbeacon.com" class="hover:text-copper transition-colors">
+            hello@copperbeacon.com
+          </a>
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-sans font-medium text-cream text-sm uppercase tracking-wider mb-4">Navigation</h3>
+        <ul class="flex flex-col gap-2" role="list">
+          {navLinks.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                class="font-sans text-sm text-cream/70 hover:text-copper transition-colors duration-200"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Industries & CTA -->
+      <div>
+        <h3 class="font-sans font-medium text-cream text-sm uppercase tracking-wider mb-4">Industries</h3>
+        <ul class="flex flex-col gap-2 mb-8" role="list">
+          {[
+            'Dentists & Dental Practices',
+            'Orthodontists',
+            'Chiropractors',
+            'Lawyers',
+            'Plumbers & HVAC',
+            'Electricians & Roofers',
+          ].map((industry) => (
+            <li>
+              <a
+                href="/industries"
+                class="font-sans text-sm text-cream/70 hover:text-copper transition-colors duration-200"
+              >
+                {industry}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="btn-primary-reversed text-sm px-4 py-2">
+          Book a free call
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-cream/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-sans text-xs text-cream/50">
+        &copy; {currentYear} Copper Beacon. Based in Iowa. All rights reserved.
+      </p>
+      <ul class="flex items-center gap-6" role="list">
+        {legalLinks.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class="font-sans text-xs text-cream/50 hover:text-cream/80 transition-colors duration-200"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</footer>

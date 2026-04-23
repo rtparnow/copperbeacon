@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  publishDate?: Date;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  ogImage = '/og-image.png',
+  type = 'website',
+  schema,
+} = Astro.props;
+
+const fullTitle = title.includes('Copper Beacon') ? title : `${title} | Copper Beacon`;
+const ogImageURL = new URL(ogImage, Astro.site).href;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Copper Beacon',
+  url: 'https://copperbeacon.com',
+  logo: 'https://copperbeacon.com/og-image.png',
+  description:
+    'Local marketing agency helping small businesses get found on Google, in AI search, and wherever customers look.',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'IA',
+    addressCountry: 'US',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@copperbeacon.com',
+    contactType: 'Customer Service',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/copperbeaconagency',
+    'https://twitter.com/gocopperbeacon',
+  ],
+};
+
+const schemas = [organizationSchema, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])];
+---
+
+<!-- Primary Meta -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content="Copper Beacon" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL} />
+
+<!-- Verification -->
+<meta name="google-site-verification" content="[GSC_VERIFICATION]" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Schema.org JSON-LD -->
+{schemas.map((s) => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

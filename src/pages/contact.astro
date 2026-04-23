@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Copper Beacon | Book a Free 15-Minute Call"
+  description="Book a free 15-minute call or send a message. We reply within one business day."
+>
+  <!-- Hero -->
+  <section class="bg-cream py-16" aria-labelledby="contact-hero-heading">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h1
+          id="contact-hero-heading"
+          class="font-serif font-medium text-navy mb-4"
+          style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em;"
+        >
+          Let's talk about your business.
+        </h1>
+        <p class="font-sans text-charcoal" style="font-size: 1.125rem; line-height: 1.65;">
+          Pick what works for you: book a call directly, or send a message and we'll get back within one business day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two-column layout -->
+  <section class="bg-warm-white py-16 border-t border-border">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Book a call (primary) -->
+        <div>
+          <h2 class="font-serif font-medium text-navy mb-3" style="font-size: 1.75rem; line-height: 1.2;">Book a free 15-minute call</h2>
+          <p class="font-sans text-charcoal/80 leading-relaxed mb-8">
+            Tell us about your business, your customers, and what you're trying to grow. No pitch, no pressure — just a real conversation about whether we're a fit.
+          </p>
+          <!-- Google Calendar embed placeholder -->
+          <div
+            class="bg-cream rounded-card border border-border flex items-center justify-center min-h-[400px]"
+            aria-label="Google Calendar booking embed (placeholder)"
+          >
+            <div class="text-center text-charcoal/40 p-8">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="mx-auto mb-4" aria-hidden="true">
+                <rect x="4" y="8" width="40" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 18h40" stroke="currentColor" stroke-width="2"/>
+                <path d="M15 4v8M33 4v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <rect x="14" y="26" width="6" height="6" rx="1" fill="currentColor"/>
+                <rect x="21" y="26" width="6" height="6" rx="1" fill="currentColor"/>
+              </svg>
+              <p class="font-sans text-sm font-medium mb-1">Calendar booking will appear here</p>
+              <p class="font-sans text-xs">Replace with: [GOOGLE_CALENDAR_EMBED]</p>
+            </div>
+          </div>
+          <!-- Uncomment and replace with actual embed:
+          <iframe
+            src="[GOOGLE_CALENDAR_EMBED]"
+            width="100%"
+            height="500"
+            frameborder="0"
+            class="rounded-card border border-border"
+            title="Book a call with Copper Beacon"
+          ></iframe>
+          -->
+        </div>
+
+        <!-- Contact form (secondary) -->
+        <div>
+          <h2 class="font-serif font-medium text-navy mb-3" style="font-size: 1.75rem; line-height: 1.2;">Or send a message</h2>
+          <p class="font-sans text-charcoal/80 leading-relaxed mb-8">
+            We read every message. We reply within one business day. Usually sooner.
+          </p>
+
+          <form
+            name="contact"
+            method="POST"
+            action="/thanks"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="flex flex-col gap-5"
+            novalidate
+          >
+            <!-- Netlify hidden field -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Honeypot -->
+            <div class="hidden" aria-hidden="true">
+              <label for="bot-field">Don't fill this out if you're human:</label>
+              <input id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Name <span class="text-copper" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                autocomplete="name"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Email <span class="text-copper" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors"
+                placeholder="you@yourbusiness.com"
+              />
+            </div>
+
+            <!-- Business name -->
+            <div>
+              <label for="business-name" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Business name
+              </label>
+              <input
+                id="business-name"
+                name="business-name"
+                type="text"
+                autocomplete="organization"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors"
+                placeholder="Your business name"
+              />
+            </div>
+
+            <!-- Business website -->
+            <div>
+              <label for="business-website" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Business website
+              </label>
+              <input
+                id="business-website"
+                name="business-website"
+                type="url"
+                autocomplete="url"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors"
+                placeholder="https://yourbusiness.com"
+              />
+            </div>
+
+            <!-- Industry -->
+            <div>
+              <label for="industry" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Industry
+              </label>
+              <select
+                id="industry"
+                name="industry"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors"
+              >
+                <option value="">Select your industry…</option>
+                <option value="dentist">Dentist</option>
+                <option value="orthodontist">Orthodontist</option>
+                <option value="chiropractor">Chiropractor</option>
+                <option value="lawyer">Lawyer</option>
+                <option value="plumber">Plumber</option>
+                <option value="hvac">HVAC</option>
+                <option value="electrician">Electrician</option>
+                <option value="roofer">Roofer</option>
+                <option value="pest-control">Pest Control</option>
+                <option value="window-washer">Window Washer</option>
+                <option value="veterinarian">Veterinarian</option>
+                <option value="realtor">Realtor</option>
+                <option value="insurance">Insurance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block font-sans text-sm font-medium text-navy mb-1.5">
+                Message <span class="text-copper" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full px-4 py-2.5 bg-cream border border-border rounded-lg font-sans text-sm text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper transition-colors resize-y"
+                placeholder="Tell us about your business and what you're trying to improve…"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary self-start">
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

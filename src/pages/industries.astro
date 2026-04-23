@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IndustryCard from '../components/IndustryCard.astro';
+import CTASection from '../components/CTASection.astro';
+
+const industries = [
+  {
+    industry: 'Dentists & dental practices',
+    description: 'Help patients find your practice before they find your competitor. Local SEO, Google Business Profile, and review management for dental offices.',
+    website: 'DentistLift.com',
+    websiteLabel: 'Learn more at DentistLift.com →',
+  },
+  {
+    industry: 'Orthodontists',
+    description: 'Families search for orthodontists weeks before they call. Make sure your practice is the first one they find.',
+    website: 'OrthodontistGrowth.com',
+    websiteLabel: 'Learn more at OrthodontistGrowth.com →',
+  },
+  {
+    industry: 'Chiropractors',
+    description: 'High search volume, high competition. We help chiropractic practices rank where patients are looking and build the review count to convert them.',
+    website: 'ChiropractorGrowth.com',
+    websiteLabel: 'Learn more at ChiropractorGrowth.com →',
+  },
+  {
+    industry: 'Plumbers',
+    description: 'Plumbing is one of the highest-intent local searches there is. We make sure your business shows up when someone needs a plumber right now.',
+    website: 'PlumberBoost.com',
+    websiteLabel: 'Learn more at PlumberBoost.com →',
+  },
+  {
+    industry: 'Electricians',
+    description: 'Electrical work is high-ticket and reputation-driven. Ranking well and having strong reviews wins jobs before anyone picks up the phone.',
+    website: 'ElectricianBoost.com',
+    websiteLabel: 'Learn more at ElectricianBoost.com →',
+  },
+  {
+    industry: 'Roofers',
+    description: 'Roofing is seasonal and competitive. The businesses that dominate local search in their market win a disproportionate share of jobs.',
+    website: 'GetMoreRoofing.com',
+    websiteLabel: 'Learn more at GetMoreRoofing.com →',
+  },
+  {
+    industry: 'Pest control',
+    description: 'Urgent searches, high conversion rate. Pest control companies that rank in the Map Pack see consistent year-round lead flow.',
+    website: 'PestControlBoost.com',
+    websiteLabel: 'Learn more at PestControlBoost.com →',
+  },
+  {
+    industry: 'Window washers',
+    description: 'A clean local search presence is the difference between a full schedule and a slow one. We help residential and commercial window washing businesses get found.',
+    website: 'WindowWasherLaunch.com',
+    websiteLabel: 'Learn more at WindowWasherLaunch.com →',
+  },
+  {
+    industry: 'Veterinarians',
+    description: 'Pet owners search online before choosing a vet. Strong reviews, complete profiles, and local SEO bring new patients through the door.',
+    website: 'VeterinarianBoost.com',
+    websiteLabel: 'Learn more at VeterinarianBoost.com →',
+  },
+  {
+    industry: 'Realtors',
+    description: 'Real estate is hyper-local. We help individual agents and small brokerages build the digital presence that earns trust before the first showing.',
+    website: 'RealtorLaunch.com',
+    websiteLabel: 'Learn more at RealtorLaunch.com →',
+  },
+  {
+    industry: 'Insurance agents',
+    description: 'Independent agents compete against captive agencies and big brands. Local SEO and a strong Google presence are the great equalizer.',
+    website: 'InsuranceAgentGrowth.com',
+    websiteLabel: 'Learn more at InsuranceAgentGrowth.com →',
+  },
+];
+---
+
+<BaseLayout
+  title="Industries We Serve | Local Marketing for Dentists, Lawyers, Contractors & More"
+  description="Copper Beacon works with dentists, orthodontists, chiropractors, lawyers, plumbers, HVAC companies, electricians, roofers, and other local service businesses."
+>
+  <!-- Hero -->
+  <section class="bg-cream py-20" aria-labelledby="industries-hero-heading">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1
+          id="industries-hero-heading"
+          class="font-serif font-medium text-navy mb-6"
+          style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;"
+        >
+          Marketing built for local professional and service businesses.
+        </h1>
+        <p class="font-sans text-charcoal" style="font-size: 1.125rem; line-height: 1.65;">
+          Copper Beacon's strongest fit is with businesses that depend on local customers finding them online. Here's who we work with.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry grid -->
+  <section class="bg-warm-white py-20 border-t border-border" aria-labelledby="industries-grid-heading">
+    <div class="container">
+      <h2 id="industries-grid-heading" class="sr-only">Industries we serve</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {industries.map((industry) => (
+          <IndustryCard {...industry} />
+        ))}
+        <!-- Not listed card -->
+        <div class="card border-dashed border-2 border-copper/30 bg-cream flex flex-col justify-center text-center py-8">
+          <h3 class="font-serif font-medium text-navy mb-2" style="font-size: 1.25rem;">Not listed? Let's talk.</h3>
+          <p class="font-sans text-charcoal/70 text-sm leading-relaxed mb-4">
+            We work with most local professional and service businesses. If you didn't see your industry above, we probably still know how to help.
+          </p>
+          <a href="/contact" class="btn-primary mx-auto text-sm px-4 py-2">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sweet spot section -->
+  <section class="bg-cream py-20 border-t border-border" aria-labelledby="sweetspot-heading">
+    <div class="container">
+      <div class="max-w-prose">
+        <h2 id="sweetspot-heading" class="section-heading mb-6">
+          We work with businesses of every size — but we do our best work for high-ticket local services.
+        </h2>
+        <p class="font-sans text-charcoal leading-relaxed">
+          Copper Beacon works with small local businesses, established practices, and multi-location operations. But our strongest results come from businesses where a single new customer is worth real money — dentists, orthodontists, lawyers, specialty contractors, and other professional service businesses where one new client can mean thousands in revenue. That's where the math of local SEO really pays off.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

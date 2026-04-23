@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Message Received | Copper Beacon"
+  description="Thanks for reaching out. We'll reply within one business day."
+>
+  <section class="bg-cream min-h-[70vh] flex items-center py-20">
+    <div class="container">
+      <div class="max-w-xl mx-auto text-center">
+        <div class="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-8" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M5 14l6 6L23 8" stroke="#2D7A51" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1 class="font-serif font-medium text-navy mb-4" style="font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.2;">
+          Thanks — we got your message.
+        </h1>
+        <p class="font-sans text-charcoal/80 leading-relaxed mb-8">
+          We'll reply within one business day, usually sooner. In the meantime, if it's urgent, feel free to book a call directly.
+        </p>
+        <a href="[BOOKING_URL]" class="btn-primary">
+          Book a call →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

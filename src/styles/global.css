@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-charcoal bg-cream antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-navy;
+    font-weight: 500;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-copper;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-copper text-cream font-sans font-medium text-sm tracking-wide rounded-lg transition-colors duration-200 hover:bg-copper-dark focus-visible:outline-2 focus-visible:outline-copper focus-visible:outline-offset-2;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-navy text-navy font-sans font-medium text-sm tracking-wide rounded-lg bg-transparent transition-all duration-200 hover:bg-navy hover:text-cream focus-visible:outline-2 focus-visible:outline-navy focus-visible:outline-offset-2;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-primary-reversed {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-copper text-cream font-sans font-medium text-sm tracking-wide rounded-lg transition-colors duration-200 hover:bg-copper-dark;
+    letter-spacing: 0.02em;
+  }
+
+  .section-heading {
+    @apply font-serif font-medium text-navy;
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    line-height: 1.2;
+  }
+
+  .card {
+    @apply bg-warm-white border border-border rounded-card shadow-soft p-6 transition-shadow duration-200 hover:shadow-card;
+  }
+
+  .container {
+    @apply max-w-content mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .prose-content {
+    @apply max-w-prose mx-auto;
+  }
+}
+
+/* Skip to content link */
+.skip-to-content {
+  @apply absolute -top-full left-4 z-50 px-4 py-2 bg-copper text-cream font-sans font-medium text-sm rounded-lg focus:top-4 transition-all;
+}
+
+/* Pill tags */
+.pill {
+  @apply inline-block px-3 py-1 bg-warm-white border border-border text-charcoal font-sans text-sm rounded-full;
+}
+
+/* Numbered step */
+.step-number {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-copper text-cream font-serif font-medium text-lg flex-shrink-0;
+}
