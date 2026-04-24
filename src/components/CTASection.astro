@@ -7,41 +7,22 @@ interface Props {
 }
 
 const {
-  heading  = 'Ready to let the customers find you?',
-  body     = 'Fifteen minutes. No pitch. Just a real conversation about whether we can help.',
+  heading = 'Ready to let the customers find you?',
+  body = 'Fifteen minutes. No pitch. Just a real conversation about whether we can help.',
   ctaLabel = 'Book a free 15-minute call',
-  ctaHref  = '[BOOKING_URL]',
+  ctaHref = '[BOOKING_URL]',
 } = Astro.props;
 ---
 
-<!-- CTA section is always dark regardless of light/dark mode -->
-<section class="bg-neutral-950 dark:bg-neutral-900 py-24 relative overflow-hidden" aria-labelledby="cta-heading">
-  <!-- Subtle dot pattern on dark background -->
-  <div
-    class="absolute inset-0 pointer-events-none opacity-20"
-    style="background-image: radial-gradient(#ffffff22 1px, transparent 1px); background-size: 22px 22px;"
-    aria-hidden="true"
-  ></div>
-
-  <div class="container relative z-10 text-center">
-    <!-- Mono label -->
-    <div class="inline-flex items-center justify-center gap-3 mb-6">
-      <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-      <span class="font-mono text-xs tracking-widest uppercase text-white/40">Get started</span>
-      <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-    </div>
-
-    <h2
-      id="cta-heading"
-      class="font-sans font-semibold text-white mb-4"
-      style="font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; letter-spacing: -0.03em;"
-    >
+<section class="bg-navy py-20" aria-labelledby="cta-heading">
+  <div class="container text-center">
+    <h2 id="cta-heading" class="font-serif font-medium text-cream mb-4" style="font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.2;">
       {heading}
     </h2>
-    <p class="font-sans text-white/60 max-w-md mx-auto mb-8" style="font-size: 1rem; line-height: 1.65;">
+    <p class="font-sans text-cream/70 text-lg max-w-md mx-auto mb-8">
       {body}
     </p>
-    <a href={ctaHref} class="btn-primary">
+    <a href={ctaHref} class="btn-primary-reversed">
       {ctaLabel}
     </a>
   </div>

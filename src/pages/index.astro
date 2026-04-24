@@ -9,62 +9,39 @@ import StatCard from '../components/StatCard.astro';
   title="Copper Beacon | Local Marketing for Small Business | SEO, Google Business Profile & AI Search"
   description="Copper Beacon helps local businesses get found and hired — on Google, in AI search like ChatGPT and Gemini, and wherever customers look. Run by an engineer who grew a home services business to $800k."
 >
-
-  <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
-  <section class="bg-cream dot-bg relative overflow-hidden" aria-labelledby="hero-heading">
-    <!-- Subtle top gradient fade over dot pattern -->
-    <div class="absolute inset-0 bg-gradient-to-b from-cream via-transparent to-cream pointer-events-none" aria-hidden="true"></div>
-
-    <div class="container relative z-10 py-28 md:py-36">
-      <div class="max-w-3xl">
-
-        <!-- Mono label -->
-        <div class="inline-flex items-center gap-3 mb-8 fade-in">
-          <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-          <span class="mono-label">Local Search + AI Visibility</span>
-        </div>
-
-        <!-- Main heading with blinking cursor -->
+  <!-- Hero -->
+  <section class="bg-cream min-h-[85vh] flex items-center py-20" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
         <h1
           id="hero-heading"
-          class="font-sans font-semibold text-charcoal cursor-blink mb-7 fade-in"
-          style="font-size: clamp(3rem, 6vw, 4.75rem); line-height: 1.06; letter-spacing: -0.04em; transition-delay: 60ms;"
+          class="font-serif font-medium text-navy mb-6"
+          style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; letter-spacing: -0.02em;"
         >
-          You run the business.<br />We bring the customers
+          You run the business.<br />We bring the customers.
         </h1>
-
-        <p
-          class="font-sans text-charcoal/60 max-w-2xl mb-10 fade-in"
-          style="font-size: 1.125rem; line-height: 1.65; transition-delay: 120ms;"
-        >
-          Copper Beacon helps local businesses get found and hired — on Google, in AI search
-          like ChatGPT and Gemini, and everywhere customers look today.
+        <p class="font-sans text-charcoal max-w-2xl mx-auto mb-8" style="font-size: 1.25rem; line-height: 1.65;">
+          Copper Beacon helps local businesses get found and hired — on Google, in AI search like ChatGPT and Gemini, and everywhere customers look today.
         </p>
-
-        <div class="flex flex-col sm:flex-row items-start gap-3 mb-10 fade-in" style="transition-delay: 180ms;">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a href="[BOOKING_URL]" class="btn-primary">
             Book a free 15-minute call
           </a>
           <a href="#services" class="btn-secondary">
             See what we do
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
           </a>
         </div>
-
-        <!-- Founder micro-copy in mono style -->
-        <p class="font-mono text-xs text-charcoal/35 fade-in" style="transition-delay: 240ms;">
-          // founded by an engineer who grew a home services business to $800k
+        <p class="font-sans text-charcoal/50 text-sm max-w-md mx-auto">
+          Founded by an engineer who grew a home services business to nearly $800k. No slick pitches. Just work that moves the numbers.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ─── Stats bar ─────────────────────────────────────────────────────── -->
-  <div class="bg-warm-white border-y border-border py-12 fade-in">
+  <!-- Stats bar -->
+  <div class="bg-warm-white border-y border-border py-10">
     <div class="container">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
         <StatCard stat="44%" label="of Map Pack clicks go to the top 3 results" source="Local SEO data" />
         <StatCard stat="2–5×" label="more calls from an optimized Google Business Profile" />
         <StatCard stat="87%" label="of consumers research online before choosing a local business" source="BrightLocal" />
@@ -73,85 +50,59 @@ import StatCard from '../components/StatCard.astro';
     </div>
   </div>
 
-  <!-- ─── Services preview ──────────────────────────────────────────────── -->
-  <section class="bg-cream py-24" id="services" aria-labelledby="services-heading">
+  <!-- Section 2: Services preview -->
+  <section class="bg-warm-white py-20" id="services" aria-labelledby="services-heading">
     <div class="container">
-
-      <!-- Section label -->
-      <div class="inline-flex items-center gap-3 mb-6 fade-in">
-        <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-        <span class="mono-label">Services</span>
-      </div>
-
-      <div class="max-w-prose mb-12 fade-in">
+      <div class="max-w-prose mb-12">
         <h2 id="services-heading" class="section-heading mb-4">
           The technical marketing work, handled.
         </h2>
-        <p class="font-sans text-charcoal/60 leading-relaxed">
-          Most small businesses don't have time to learn local SEO, manage Google Business Profile,
-          track AI search visibility, or chase reviews. We handle all of it — quietly, competently,
-          and in plain English when you want updates.
+        <p class="font-sans text-charcoal leading-relaxed">
+          Most small businesses don't have time to learn local SEO, manage Google Business Profile, track AI search visibility, or chase reviews. We handle all of it — quietly, competently, and in plain English when you want updates.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        {[
-          {
-            title: 'Local search optimization',
-            description: 'Your business ranking where customers are looking — in the Google Map Pack, organic search, and "near me" results.',
-          },
-          {
-            title: 'Google Business Profile management',
-            description: 'The #1 source of local leads, properly optimized and actively managed — photos, posts, Q&A, service updates, everything.',
-          },
-          {
-            title: 'Review generation & reputation',
-            description: 'More reviews, faster. Automated request flows, response management, and a steady pipeline of 5-star social proof.',
-          },
-          {
-            title: 'AI search visibility',
-            description: 'When customers ask ChatGPT, Claude, Gemini, or Perplexity who\'s the best in your area — your business shows up in the answer.',
-          },
-        ].map((s) => (
-          <div class="fade-in">
-            <ServiceCard title={s.title} description={s.description} />
-          </div>
-        ))}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <ServiceCard
+          title="Local search optimization"
+          description='Your business, ranking where customers are looking — in the Google Map Pack, in organic search, and in "near me" results.'
+        />
+        <ServiceCard
+          title="Google Business Profile management"
+          description="The #1 source of local leads, properly optimized and actively managed — photos, posts, Q&A, service updates, everything."
+        />
+        <ServiceCard
+          title="Review generation & reputation"
+          description="More reviews, faster. Automated request flows, response management, and a steady pipeline of 5-star social proof."
+        />
+        <ServiceCard
+          title="AI search visibility"
+          description="When customers ask ChatGPT, Claude, Gemini, or Perplexity who's the best in your area — your business shows up in the answer."
+        />
       </div>
 
-      <a href="/services" class="inline-flex items-center gap-1.5 font-sans font-medium text-sm text-copper hover:text-copper-dark transition-colors duration-150 fade-in">
+      <a href="/services" class="font-sans font-medium text-copper hover:text-copper-dark transition-colors duration-200 inline-flex items-center gap-1">
         See all services
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
   </section>
 
-  <!-- Thin copper rule separator -->
-  <div class="container"><hr class="copper-rule" /></div>
-
-  <!-- ─── Who we serve ───────────────────────────────────────────────────── -->
-  <section class="bg-cream py-24" aria-labelledby="who-heading">
+  <!-- Section 3: Who we serve -->
+  <section class="bg-cream py-20" aria-labelledby="who-heading">
     <div class="container">
-
-      <div class="inline-flex items-center gap-3 mb-6 fade-in">
-        <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-        <span class="mono-label">Industries</span>
-      </div>
-
-      <div class="max-w-prose mb-10 fade-in">
+      <div class="max-w-prose mb-10">
         <h2 id="who-heading" class="section-heading mb-4">
           Built for local businesses that want real results.
         </h2>
-        <p class="font-sans text-charcoal/60 leading-relaxed">
-          Copper Beacon works best for professional and service businesses with real revenue
-          potential — dentists, orthodontists, chiropractors, lawyers, plumbers, HVAC companies,
-          electricians, roofers, and similar local service providers.
+        <p class="font-sans text-charcoal leading-relaxed">
+          Copper Beacon works best for professional and service businesses with real revenue potential — dentists, orthodontists, chiropractors, lawyers, plumbers, HVAC companies, electricians, roofers, and similar local service providers. If your customers search for you online before picking up the phone, we can help.
         </p>
       </div>
 
-      <div class="flex flex-wrap gap-2 mb-8 fade-in" aria-label="Industries we serve">
+      <div class="flex flex-wrap gap-2 mb-8" aria-label="Industries we serve">
         {[
           'Dentists', 'Orthodontists', 'Chiropractors', 'Lawyers',
           'Plumbers', 'HVAC', 'Electricians', 'Roofers',
@@ -161,99 +112,88 @@ import StatCard from '../components/StatCard.astro';
         ))}
       </div>
 
-      <a href="/industries" class="inline-flex items-center gap-1.5 font-sans font-medium text-sm text-copper hover:text-copper-dark transition-colors duration-150 fade-in">
+      <a href="/industries" class="font-sans font-medium text-copper hover:text-copper-dark transition-colors duration-200 inline-flex items-center gap-1">
         See all industries we serve
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
   </section>
 
-  <!-- ─── Why section ────────────────────────────────────────────────────── -->
-  <section class="bg-warm-white border-y border-border py-24" aria-labelledby="why-heading">
+  <!-- Section 4: Why founders hire us -->
+  <section class="bg-warm-white py-20" aria-labelledby="why-heading">
     <div class="container">
-
-      <div class="inline-flex items-center gap-3 mb-6 fade-in">
-        <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-        <span class="mono-label">Why Copper Beacon</span>
-      </div>
-
-      <div class="max-w-prose mb-12 fade-in">
+      <div class="max-w-prose mb-12">
         <h2 id="why-heading" class="section-heading">
           You didn't start your business to become a marketing expert.
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          {
-            title: 'Quiet, technical, accountable',
-            body: 'No slick sales pitch. No vague deliverables. You get clear monthly reports on what\'s been done and what it\'s producing — calls, customers, revenue.',
-          },
-          {
-            title: 'Built on operator experience',
-            body: 'The founder grew a home services business to nearly $800k in revenue. We know what small business owners actually need, because we\'ve been one.',
-          },
-          {
-            title: 'Ahead of where search is going',
-            body: 'Customers now ask AI assistants for recommendations. Most agencies still haven\'t noticed. We optimize for Google and for ChatGPT, Claude, Gemini, and whatever comes next.',
-          },
-        ].map((item) => (
-          <div class="card bracket-corner fade-in">
-            <h3 class="font-sans font-semibold text-charcoal mb-3" style="font-size: 1.0625rem; letter-spacing: -0.02em;">{item.title}</h3>
-            <p class="font-sans text-charcoal/60 text-sm leading-relaxed">{item.body}</p>
-          </div>
-        ))}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-serif font-medium text-navy mb-3" style="font-size: 1.25rem;">Quiet, technical, accountable</h3>
+          <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+            No slick sales pitch. No vague deliverables. You get clear monthly reports on what's been done and what it's producing — calls, customers, revenue.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif font-medium text-navy mb-3" style="font-size: 1.25rem;">Built on operator experience</h3>
+          <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+            The founder grew a home services business to nearly $800k in revenue. We know what small business owners actually need, because we've been one.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif font-medium text-navy mb-3" style="font-size: 1.25rem;">Ahead of where search is going</h3>
+          <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+            Customers now ask AI assistants for recommendations. Most agencies still haven't noticed. We optimize for Google <em>and</em> for ChatGPT, Claude, Gemini, and whatever comes next.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── How it works ───────────────────────────────────────────────────── -->
-  <section class="bg-cream py-24" aria-labelledby="how-heading">
+  <!-- Section 5: How it works -->
+  <section class="bg-cream py-20" aria-labelledby="how-heading">
     <div class="container">
-
-      <div class="inline-flex items-center gap-3 mb-6 fade-in">
-        <span class="w-5 h-px bg-copper/60" aria-hidden="true"></span>
-        <span class="mono-label">Process</span>
-      </div>
-
-      <div class="max-w-prose mb-12 fade-in">
+      <div class="max-w-prose mb-12">
         <h2 id="how-heading" class="section-heading">
           A simple way to start working together.
         </h2>
       </div>
 
-      <div class="max-w-xl">
+      <div class="max-w-2xl">
         <ol class="flex flex-col gap-8" role="list">
-          {[
-            {
-              n: '01',
-              title: '15-minute call',
-              body: 'Tell us about your business, your customers, and where you want to grow. No pitch deck. No pressure.',
-            },
-            {
-              n: '02',
-              title: 'Custom proposal',
-              body: 'We audit your current online visibility and build a plan specific to your business, industry, and goals.',
-            },
-            {
-              n: '03',
-              title: 'We get to work',
-              body: 'Clear scope. Clear pricing. Monthly check-ins. You focus on running the business while the customers start showing up.',
-            },
-          ].map((step) => (
-            <li class="flex gap-5 fade-in">
-              <div class="step-number" aria-hidden="true">{step.n}</div>
-              <div>
-                <h3 class="font-sans font-semibold text-charcoal mb-2" style="font-size: 1rem; letter-spacing: -0.02em;">{step.title}</h3>
-                <p class="font-sans text-charcoal/60 text-sm leading-relaxed">{step.body}</p>
-              </div>
-            </li>
-          ))}
+          <li class="flex gap-5">
+            <div class="step-number flex-shrink-0" aria-hidden="true">1</div>
+            <div>
+              <h3 class="font-serif font-medium text-navy mb-2" style="font-size: 1.25rem;">15-minute call</h3>
+              <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+                Tell us about your business, your customers, and where you want to grow. No pitch deck. No pressure.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <div class="step-number flex-shrink-0" aria-hidden="true">2</div>
+            <div>
+              <h3 class="font-serif font-medium text-navy mb-2" style="font-size: 1.25rem;">Custom proposal</h3>
+              <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+                We audit your current online visibility and build a plan specific to your business, industry, and goals.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <div class="step-number flex-shrink-0" aria-hidden="true">3</div>
+            <div>
+              <h3 class="font-serif font-medium text-navy mb-2" style="font-size: 1.25rem;">We get to work</h3>
+              <p class="font-sans text-charcoal/80 text-sm leading-relaxed">
+                Clear scope. Clear pricing. Monthly check-ins. You focus on running the business while the customers start showing up.
+              </p>
+            </div>
+          </li>
         </ol>
 
-        <div class="mt-10 fade-in">
+        <div class="mt-10">
           <a href="[BOOKING_URL]" class="btn-primary">
             Book your free call
           </a>
@@ -262,7 +202,6 @@ import StatCard from '../components/StatCard.astro';
     </div>
   </section>
 
-  <!-- ─── Final CTA ──────────────────────────────────────────────────────── -->
+  <!-- Final CTA -->
   <CTASection />
-
 </BaseLayout>
