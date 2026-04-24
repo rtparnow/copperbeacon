@@ -9,13 +9,9 @@ const { stat, label, source } = Astro.props;
 ---
 
 <div class="text-center">
-  <div class="font-serif font-medium text-copper mb-1" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1;">
-    {stat}
-  </div>
-  <div class="font-sans text-sm text-charcoal/80 leading-snug">
-    {label}
-  </div>
+  <div class="stat-number mb-1">{stat}</div>
+  <div class="font-sans text-sm text-charcoal/60 leading-snug">{label}</div>
   {source && (
-    <div class="font-sans text-xs text-charcoal/40 mt-1">{source}</div>
+    <div class="font-mono text-xs text-charcoal/35 mt-1">{source}</div>
   )}
 </div>

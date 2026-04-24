@@ -16,7 +16,6 @@ interface Props {
 const { title, description, canonicalURL, ogImage, type, schema } = Astro.props;
 
 const isProd = import.meta.env.PROD;
-// Replace these placeholders with real values before deploying
 const GA4_ID = '[GA4_ID]';
 const CLARITY_ID = '[CLARITY_ID]';
 ---
@@ -26,6 +25,20 @@ const CLARITY_ID = '[CLARITY_ID]';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Dark mode: runs synchronously before paint to prevent flash -->
+  <script is:inline>
+    (function () {
+      try {
+        var stored = localStorage.getItem('cb-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (_) {}
+    })();
+  </script>
+
   <SEO
     title={title}
     description={description}
@@ -34,6 +47,8 @@ const CLARITY_ID = '[CLARITY_ID]';
     type={type}
     schema={schema}
   />
+
+  <!-- Fonts: Inter + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -67,5 +82,21 @@ const CLARITY_ID = '[CLARITY_ID]';
     <slot />
   </main>
   <Footer />
+
+  <!-- Global scroll fade-in observer -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
