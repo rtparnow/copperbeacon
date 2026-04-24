@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default('[FOUNDER_NAME]'),
+    author: z.string().default('Ryan Parnow'),
     tags: z.array(z.string()).default([]),
     featuredImage: z.string().optional(),
     draft: z.boolean().default(false),

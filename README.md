@@ -31,7 +31,7 @@ Search-replace these tokens before going live:
 |---|---|
 | `[BOOKING_URL]` | Google Calendar booking link URL |
 | `[GOOGLE_CALENDAR_EMBED]` | Calendar embed iframe src (from Google Calendar → Share → Embed) |
-| `[FOUNDER_NAME]` | Founder's full name |
+| `[FOUNDER_NAME]` | Founder's full name (filled in: Ryan Parnow) |
 | `[FOUNDER_HEADSHOT]` | Path to headshot image (put file in `public/`) |
 | `[GA4_ID]` | Google Analytics 4 measurement ID (format: `G-XXXXXXXXXX`) |
 | `[CLARITY_ID]` | Microsoft Clarity project ID |
@@ -74,7 +74,7 @@ Create a Markdown file in `src/content/blog/`:
 title: Your Post Title
 description: One-sentence description for SEO and previews.
 publishDate: 2026-04-22
-author: [FOUNDER_NAME]
+author: Ryan Parnow
 tags: [local-seo, google-business-profile]
 draft: false
 ---
