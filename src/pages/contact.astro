@@ -35,33 +35,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="font-sans text-charcoal/80 leading-relaxed mb-8">
             Tell us about your business, your customers, and what you're trying to grow. No pitch, no pressure — just a real conversation about whether we're a fit.
           </p>
-          <!-- Google Calendar embed placeholder -->
-          <div
-            class="bg-cream rounded-card border border-border flex items-center justify-center min-h-[400px]"
-            aria-label="Google Calendar booking embed (placeholder)"
-          >
-            <div class="text-center text-charcoal/40 p-8">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="mx-auto mb-4" aria-hidden="true">
-                <rect x="4" y="8" width="40" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 18h40" stroke="currentColor" stroke-width="2"/>
-                <path d="M15 4v8M33 4v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <rect x="14" y="26" width="6" height="6" rx="1" fill="currentColor"/>
-                <rect x="21" y="26" width="6" height="6" rx="1" fill="currentColor"/>
-              </svg>
-              <p class="font-sans text-sm font-medium mb-1">Calendar booking will appear here</p>
-              <p class="font-sans text-xs">Replace with: [GOOGLE_CALENDAR_EMBED]</p>
-            </div>
+          <!-- Google Calendar booking embed -->
+          <div class="rounded-card border border-border overflow-hidden">
+            <iframe
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0yajrOkLo_qJWOzoxfXEl_qIuIg3fc8INjtzqY464KpTTTH9ljqyYkmbNNn9-_xdV-V_vsMkks?gv=true"
+              style="border: 0;"
+              loading="lazy"
+              title="Book a free consultation with Copper Beacon"
+              class="block w-full h-[600px] lg:h-[700px]"
+            ></iframe>
           </div>
-          <!-- Uncomment and replace with actual embed:
-          <iframe
-            src="[GOOGLE_CALENDAR_EMBED]"
-            width="100%"
-            height="500"
-            frameborder="0"
-            class="rounded-card border border-border"
-            title="Book a call with Copper Beacon"
-          ></iframe>
-          -->
         </div>
 
         <!-- Contact form (secondary) -->
