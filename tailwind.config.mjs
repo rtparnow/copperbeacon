@@ -18,11 +18,11 @@ export default {
         success: '#2D7A51',
       },
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['"Source Serif 4"', 'Georgia', '"Times New Roman"', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        hero: ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        hero: ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
         'h2': ['clamp(1.75rem, 3vw, 2.75rem)', { lineHeight: '1.2' }],
         'h3': ['clamp(1.25rem, 2vw, 1.75rem)', { lineHeight: '1.3' }],
         'body': ['1.0625rem', { lineHeight: '1.7' }],
