@@ -16,9 +16,7 @@ interface Props {
 const { title, description, canonicalURL, ogImage, type, schema } = Astro.props;
 
 const isProd = import.meta.env.PROD;
-// Replace these placeholders with real values before deploying
 const GA4_ID = 'G-CD526L25GR';
-const CLARITY_ID = '[CLARITY_ID]';
 ---
 
 <!DOCTYPE html>
@@ -37,7 +35,7 @@ const CLARITY_ID = '[CLARITY_ID]';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  {isProd && GA4_ID !== '[GA4_ID]' && (
+  {isProd && (
     <Fragment>
       <script is:inline set:html={`
         (function(){
@@ -54,9 +52,9 @@ const CLARITY_ID = '[CLARITY_ID]';
       <script is:inline set:html={`
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/${CLARITY_ID}';
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window,document,'clarity','script','${CLARITY_ID}');
+        })(window, document, "clarity", "script", "wpm2st616f");
       `} />
     </Fragment>
   )}
