@@ -14,8 +14,15 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-navy py-20" aria-labelledby="cta-heading">
-  <div class="container text-center">
+<section class="relative bg-navy py-20 overflow-hidden" aria-labelledby="cta-heading">
+  <img
+    src="/logo.png"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
+    style="width: min(70vw, 640px); height: auto;"
+  />
+  <div class="container text-center relative z-10">
     <h2 id="cta-heading" class="font-serif font-medium text-cream mb-4" style="font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.2;">
       {heading}
     </h2>

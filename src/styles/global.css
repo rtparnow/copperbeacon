@@ -77,4 +77,24 @@
 /* Numbered step */
 .step-number {
   @apply flex items-center justify-center w-10 h-10 rounded-full bg-copper text-cream font-serif font-medium text-lg flex-shrink-0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle map-grid texture used to set a section apart from its neighbors */
+.section-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%230B2545' stroke-width='1'%3E%3Cpath d='M0 24h140M0 70h140M0 116h140M24 0v140M70 0v140M116 0v140'/%3E%3Cpath d='M0 0l140 140M140 0L0 140' stroke-width='0.5' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
+  pointer-events: none;
 }

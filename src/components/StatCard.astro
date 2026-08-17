@@ -1,14 +1,22 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
   stat: string;
   label: string;
   source?: string;
+  icon?: string;
 }
 
-const { stat, label, source } = Astro.props;
+const { stat, label, source, icon } = Astro.props;
 ---
 
 <div class="text-center">
+  {icon && (
+    <div class="flex justify-center mb-2" aria-hidden="true">
+      <Icon name={icon} width={22} height={22} class="text-copper/70" />
+    </div>
+  )}
   <div class="font-serif font-medium text-copper mb-1" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1;">
     {stat}
   </div>
