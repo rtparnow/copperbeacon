@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTASection from '../components/CTASection.astro';
+import founderPhoto from '../assets/founder-ryan-parnow.jpg';
 ---
 
 <BaseLayout
@@ -31,19 +33,13 @@ import CTASection from '../components/CTASection.astro';
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
         <!-- Headshot -->
         <div class="lg:col-span-2">
-          <div
-            class="aspect-[3/4] rounded-card bg-border/30 flex items-center justify-center border border-border"
-            aria-label="Ryan Parnow — founder of Copper Beacon (photo placeholder)"
-            role="img"
-          >
-            <div class="text-center text-charcoal/40">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="mx-auto mb-3" aria-hidden="true">
-                <circle cx="24" cy="18" r="10" stroke="currentColor" stroke-width="2"/>
-                <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <p class="font-sans text-xs">[FOUNDER_HEADSHOT]</p>
-            </div>
-          </div>
+          <Image
+            src={founderPhoto}
+            alt="Ryan Parnow, founder of Copper Beacon, on vacation with his wife and kids"
+            width={1000}
+            height={750}
+            class="aspect-[4/3] w-full rounded-card border border-border object-cover"
+          />
         </div>
 
         <!-- Bio -->
